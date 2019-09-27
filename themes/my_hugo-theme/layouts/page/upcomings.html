@@ -1,0 +1,22 @@
+{{ partial "head.html" . }}
+
+{{ partial "header.html" . }}
+
+<div class="main">
+	<h1 class="mt-3">Tous les événements à venir : </h1>
+	<div class="container">
+		{{ range .Site.RegularPages }}
+			{{ if eq .Type "events"}}
+				{{ if gt (time .Params.when) (now)}}
+				    <div class="row">
+				    	<div class="col-md-12">
+							{{ partial "event.html" . }}
+						</div>
+					</div>
+				{{end}}
+			{{ end }}
+		{{ end }}
+	</div>
+
+  {{ partial "footer.html" .}}
+</div>

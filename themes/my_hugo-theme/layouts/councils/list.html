@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+{{ partial "presentation.html" . }}
+
+
+
+<h2>Liste des membres du Conseil Municipal</h2>
+
+{{ range first 100 .Site.RegularPages }}
+    <!-- Si la page est un post -->
+    {{ if eq .Type "councils" }}
+        <h2>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+    {{ end }}
+    <!-- Fin if -->
+{{ end }}
+{{ partial "footer.html" . }}

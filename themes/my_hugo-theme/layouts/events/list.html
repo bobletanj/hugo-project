@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+<h2>Tous les évènements</h2>
+
+<div class="container">
+
+	{{ range first 1000 .Site.RegularPages }}
+		<!-- Si la page est un post -->
+		{{ if eq .Type "events" }}
+			<div class="row">
+				<div class="col-md-12">
+
+					<h2>
+						<a href="{{ .Permalink }}">{{ .Title }}</a>
+					</h2>
+					<p> <img src="{{ index (.Params.photos) 0 }}"></img>
+					</p>
+				</div>
+			</div>
+		{{ end }}
+		<!-- Fin if -->
+	{{ end }}
+
+</div>
+
+{{ partial "footer.html" . }}

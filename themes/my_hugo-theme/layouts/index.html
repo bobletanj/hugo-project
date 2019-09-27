@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+  
+<style> 
+  body {
+ background-image: url("/index.jpg");
+ background-color: #cccccc;
+ background-repeat: no-repeat;
+ width:100%;
+ background-size: cover
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <!-- EFFECTUE UNE BOUCLE SUR TOUTES LES PAGES DU SITE -->
+    {{ range first 1000 .Site.RegularPages }}
+        <!-- Si la page est un post -->
+        {{ if eq .Type "events" }}
+        	{{ if gt (time .Params.when) (now)}}
+	            <h2>
+	                <a href="{{ .Permalink }}">{{ .Title }}</a>
+	            </h2>
+            {{ end }}
+        {{ end }}
+        <!-- Fin if -->
+    {{ end }}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{{ partial "footer.html" . }}
+
+</html>

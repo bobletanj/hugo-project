@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+
+<h2> {{ .Params.firstName }} {{ .Params.lastName }} </h2>
+
+<h3> {{ .Params.role }} </h3>
+
+
+<p> <img src="{{ index (.Params.photos) 0 }}"></img>
+
+
+{{ partial "footer.html" . }}
