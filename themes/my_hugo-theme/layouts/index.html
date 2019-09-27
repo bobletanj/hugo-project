@@ -23,6 +23,8 @@
         <!-- Si la page est un post -->
         {{ if eq .Type "events" }}
         	{{ if gt (time .Params.when) (now)}}
+	            
+        		<h2> Les évènements à venir : </h2>
 	            <h2>
 	                <a href="{{ .Permalink }}">{{ .Title }}</a>
 	            </h2>
