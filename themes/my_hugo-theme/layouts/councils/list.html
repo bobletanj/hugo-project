@@ -8,6 +8,9 @@
 
 
 
+<div class="container" >
+	<div class="row" >
+		<div class="col-md-12">
 <h2>Liste des membres du Conseil Municipal</h2>
 
 {{ range first 100 .Site.RegularPages }}
@@ -19,4 +22,7 @@
     {{ end }}
     <!-- Fin if -->
 {{ end }}
+</div>
+	</div>
+		</div>
 {{ partial "footer.html" . }}
