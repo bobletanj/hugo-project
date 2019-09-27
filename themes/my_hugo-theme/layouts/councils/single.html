@@ -5,13 +5,19 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
 
-
+<div class="container" >
+	<div class="row" >
+		<div class="col-md-12">
 <h2> {{ .Params.firstName }} {{ .Params.lastName }} </h2>
 
 <h3> {{ .Params.role }} </h3>
 
 
 <p> <img src="{{ index (.Params.photos) 0 }}"></img>
+</p>
+</div>
+	</div>
+		</div>
 
 
 {{ partial "footer.html" . }}
